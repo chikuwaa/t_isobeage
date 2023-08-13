@@ -12,7 +12,7 @@ const sass = require('gulp-sass')(require('sass'));
 const postcss = require("gulp-postcss");
 const autoprefixer = require("autoprefixer");
 const postcssGapProperties = require("postcss-gap-properties");
-//JS(ES2015(ES6)=>ES5)
+//JSコメントアウト削除
 const babel = require('gulp-babel');
 //画像圧縮
 const imagemin = require('gulp-imagemin');

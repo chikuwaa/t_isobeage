@@ -1,5 +1,7 @@
 @charset "UTF-8";
-$font : Georgia,游明朝,"Yu Mincho",YuMincho,"Hiragino Mincho ProN",HGS明朝E,メイリオ,Meiryo,serif;
+@use "sass:math";
+$font : 'Noto Sans JP', sans-serif;
+$t_font : 'Shizuru', cursive;
 $key01 : #3B3353;
 $key02 : #F0F3C4;
 $pc: 1024px; // PC
@@ -26,10 +28,10 @@ $sp: 480px;  // スマホ
   }
 }
 @mixin eng01{
-    font-family: 'Bellefair', serif;
+    // font-family: 'Bellefair', serif;
 }
-@mixin eng02{
-    font-family: 'Cedarville Cursive', cursive;
+@mixin f_tit{
+    font-family: $t_font;
 }
 @mixin dn{
     display: none;

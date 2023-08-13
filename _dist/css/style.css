@@ -1,0 +1,41 @@
+@charset "UTF-8";
+@media (max-width: 1024px) {
+  .pc {
+    display: none;
+  }
+}
+
+.sp {
+  display: none;
+}
+@media (max-width: 480px) {
+  .sp {
+    display: inherit;
+  }
+}
+
+/*
+ページ全体--------------------*/
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Noto Sans JP", sans-serif;
+  line-height: 1.63;
+  font-size: 1.9rem;
+}
+@media (max-width: 480px) {
+  body {
+    font-size: 1.4rem;
+  }
+}
+
+img {
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+}
+
+/*
+header--------------------*/
