@@ -58,7 +58,7 @@ gulp.task("sass", function (done) {
       .src([srcDir+"sass/**/*.scss", "!" + srcDir+"sass/**/_*.scss"])
       .pipe(plumber())
       .pipe(sass({
-        outputStyle: 'compressed'// そのままはexpanded Minifyするなら'compressed'
+        outputStyle: 'expanded'// そのままはexpanded Minifyするなら'compressed'
       }))
       .pipe(postcss([
         postcssGapProperties(),
@@ -75,7 +75,8 @@ gulp.task("js", function () {
         .src([srcDir+"js/**/*.js", "!" + srcDir+"js/**/*.min.js"])
         .pipe(plumber())
         .pipe(babel({
-			presets: ['@babel/preset-env']
+			// presets: ['@babel/preset-env']
+       comments: false // JS圧縮はしないが、コメントアウトは消す
 		}))
 		.pipe(gulp.dest(distDir+"js"))
         .pipe(bs.stream());
@@ -112,7 +113,7 @@ gulp.task("watch", function () {
 gulp.task(
     "default",
     gulp.series( //順番に実行
-        gulp.parallel("ejs","sass","js"), 
+        gulp.parallel("ejs","sass","js"),
         gulp.parallel("watch", "bs-init") //並列に実行
     )
 );
