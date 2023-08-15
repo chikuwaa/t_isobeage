@@ -1,0 +1,45 @@
+/*
+ページ全体--------------------*/
+html
+{
+  font-size: 62.5%;
+}
+body{
+  font-family: $font;
+  @include lh(16,26);
+  color: $fc;
+  font-weight: 500;
+  @include sp{
+      @include f(14);
+  }
+
+}
+img{
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+}
+a{
+  color: $fc;
+  text-decoration: none;
+}
+* + h1,
+* + h2,
+* + h3,
+* + h4,
+* + h5,
+* + h6{
+  margin-top: 1em;
+
+}
+.pc{
+  @include pc{
+      display: none !important;
+  }
+}
+.sp{
+display: none !important;
+@include sp{
+  display: block !important;
+}
+}

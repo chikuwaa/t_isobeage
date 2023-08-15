@@ -29,7 +29,7 @@ gulp.task("bs-init", function () {
         baseDir: distDir,
       },
       reloadDelay: 1000,//リロードの遅延
-      //open: false, //起動時ブラウザを立ち上げない
+      open: false, //起動時ブラウザを立ち上げない
     });
 });
 gulp.task("ejs", function (done) {
@@ -59,7 +59,7 @@ gulp.task("sass", function (done) {
       .pipe(plumber())
       .pipe(sass({
         outputStyle: 'expanded'// そのままはexpanded Minifyするなら'compressed'
-      }))
+      }).on('error', sass.logError))
       .pipe(postcss([
         postcssGapProperties(),
         autoprefixer({

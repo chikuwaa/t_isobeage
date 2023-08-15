@@ -1,9 +1,10 @@
 @charset "UTF-8";
 @use "sass:math";
-$font : 'Noto Sans JP', sans-serif;
+$font : YakuHanJP_Noto ,'Noto Sans JP', sans-serif;
 $t_font : 'Shizuru', cursive;
-$key01 : #3B3353;
-$key02 : #F0F3C4;
+$key01 : #ffdb4f;
+$key02 : #badcad;
+$fc : #16160e;
 $pc: 1024px; // PC
 $tab: 768px; // タブレット
 $sp: 480px;  // スマホ
