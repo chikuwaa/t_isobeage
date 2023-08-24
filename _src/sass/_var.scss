@@ -34,11 +34,17 @@ $sp: 480px;  // スマホ
 @mixin f_tit{
     font-family: $t_font;
 }
+@mixin bs{
+  box-sizing: border-box;
+}
 @mixin dn{
     display: none;
 }
 @mixin db{
     display: block;
+}
+@mixin dib{
+  display: inline-block;
 }
 @mixin w{
     width: 100%;
