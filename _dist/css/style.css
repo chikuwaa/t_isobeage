@@ -12,7 +12,7 @@ body {
   color: #16160e;
   font-weight: 500;
 }
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   body {
     font-size: 1.4rem;
   }
@@ -38,7 +38,7 @@ a {
   margin-top: 1em;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1200px) {
   .pc {
     display: none !important;
   }
@@ -94,6 +94,12 @@ header--------------------*/
   transition: transform 1s ease-out;
   transition: transform 1s ease-out, -webkit-transform 1s ease-out;
 }
+@media (max-width: 768px) {
+  .fixd_area_wrap {
+    -webkit-transform: translateX(-100%) translateX(100px);
+            transform: translateX(-100%) translateX(100px);
+  }
+}
 .fixd_area_wrap.open {
   -webkit-transform: translateX(0);
           transform: translateX(0);
@@ -106,6 +112,14 @@ header--------------------*/
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   padding-left: 30px;
+}
+@media (max-width: 768px) {
+  .fixd_area_wrap header {
+    display: block;
+    width: 100px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
 }
 .fixd_area_wrap header .tit_wrap {
   display: -webkit-box;
@@ -124,16 +138,27 @@ header--------------------*/
 }
 .fixd_area_wrap header .tit_wrap .siteTit {
   font-family: "Shizuru", cursive;
-  font-size: 10rem;
+  font-size: min(10rem, 13vh);
   -webkit-writing-mode: vertical-rl;
   -ms-writing-mode: tb-rl;
   writing-mode: vertical-rl;
+}
+@media (max-width: 768px) {
+  .fixd_area_wrap header .tit_wrap .siteTit {
+    font-size: min(7rem, 10vh);
+  }
 }
 .fixd_area_wrap header .tit_wrap .icon_pic {
   width: 50%;
   aspect-ratio: 1/1;
   background-color: #badcad;
   border-radius: 50%;
+}
+@media (max-width: 768px) {
+  .fixd_area_wrap header .tit_wrap .icon_pic {
+    width: 80%;
+    margin-top: 1em;
+  }
 }
 .fixd_area_wrap header nav {
   margin-left: auto;
@@ -180,6 +205,14 @@ header--------------------*/
           transform: scale(1, 1);
   -webkit-transform-origin: center top;
           transform-origin: center top;
+}
+.fixd_area_wrap header .sp_menu {
+  display: none;
+}
+@media (max-width: 768px) {
+  .fixd_area_wrap header .sp_menu {
+    display: block;
+  }
 }
 .fixd_area_wrap .about_contents {
   width: calc(100% - 350px);
@@ -299,6 +332,11 @@ header--------------------*/
   width: calc(100% - 350px);
   margin-left: auto;
   margin-right: 0px;
+}
+@media (max-width: 768px) {
+  .contents_wrap {
+    width: calc(100% - 100px);
+  }
 }
 
 .tit_h1 {
@@ -436,10 +474,26 @@ p a, .p_link {
       -ms-flex-align: start;
           align-items: flex-start;
 }
+@media (max-width: 1200px) {
+  .new_articles_area article {
+    width: 100%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
 .new_articles_area article figure {
   width: 50%;
   aspect-ratio: 1/1;
   background-color: #badcad;
+}
+@media (max-width: 1200px) {
+  .new_articles_area article figure {
+    width: 100%;
+    aspect-ratio: 2/1;
+    margin-bottom: 10px;
+  }
 }
 .new_articles_area article figure a {
   display: block;
@@ -457,6 +511,12 @@ p a, .p_link {
           box-sizing: border-box;
   padding-right: 20px;
   margin-bottom: 1em;
+}
+@media (max-width: 1200px) {
+  .new_articles_area article .txtBox {
+    width: 100%;
+    padding-right: 0px;
+  }
 }
 .new_articles_area article .txtBox ul {
   list-style: none;
@@ -493,14 +553,40 @@ p a, .p_link {
       -ms-flex-direction: column;
           flex-direction: column;
 }
+@media (max-width: 1200px) {
+  .new_articles_area article:nth-child(n+3) {
+    width: 100%;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
 .new_articles_area article:nth-child(n+3) figure {
   aspect-ratio: 2/1;
   width: 100%;
   margin-bottom: 10px;
 }
+@media (max-width: 1200px) {
+  .new_articles_area article:nth-child(n+3) figure {
+    width: calc(50% - 10px);
+    margin-bottom: 0px;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    aspect-ratio: 1/1;
+  }
+}
 .new_articles_area article:nth-child(n+3) .txtBox {
   padding-right: 0px;
   width: 100%;
+}
+@media (max-width: 1200px) {
+  .new_articles_area article:nth-child(n+3) .txtBox {
+    width: 50%;
+  }
 }
 
 footer {

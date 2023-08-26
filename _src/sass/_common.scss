@@ -9,7 +9,7 @@ body{
   @include lh(16,26);
   color: $fc;
   font-weight: 500;
-  @include sp{
+  @include tab{
       @include f(14);
   }
 

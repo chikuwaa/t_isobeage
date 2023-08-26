@@ -28,6 +28,10 @@ header--------------------*/
   padding-right: 0px;
   box-sizing: border-box;
   transition: transform 1s ease-out;
+  @include tab{
+    transform: translateX(-100%) translateX(100px) ;
+
+  };
 
   &.open{
     transform: translateX(0) ;
@@ -38,6 +42,12 @@ header--------------------*/
     display: flex;
     box-sizing: border-box;
     padding-left: 30px;
+    @include tab{
+      @include db;
+      width: 100px;
+      padding-left: 15px;
+      padding-right: 15px;
+    };
 
     .tit_wrap{
       display: flex;
@@ -47,16 +57,24 @@ header--------------------*/
 
       .siteTit{
         @include f_tit;
-        @include f(100);
+        font-size: min(10rem,13vh);
         -webkit-writing-mode: vertical-rl;
         -ms-writing-mode: tb-rl;
             writing-mode: vertical-rl;
+        @include tab{
+          font-size: min(7rem,10vh);
+
+        };
       }
       .icon_pic{
         width: 50%;
         aspect-ratio: 1 /1;
         background-color: $key02;
         border-radius: 50%;
+        @include tab{
+          width: 80%;
+          margin-top: 1em;
+        };
       }
     }
     nav{
@@ -102,6 +120,12 @@ header--------------------*/
           }
         }
       }
+    }
+    .sp_menu{
+      @include dn;
+      @include tab{
+        @include db;
+      };
     }
   }
   .about_contents{
@@ -215,6 +239,9 @@ header--------------------*/
   width: calc(100% - 350px);
   margin-left: auto;
   margin-right: 0px;
+  @include tab{
+    width: calc(100% - 100px);
+  };
 
 }
 // 共通
@@ -323,6 +350,8 @@ p a,.p_link{
 .new_articles_area{
   display: flex;
   flex-wrap: wrap;
+  @include pc{
+  };
 
   article{
     width: 50%;
@@ -333,11 +362,22 @@ p a,.p_link{
     flex-wrap: wrap;
     flex-direction: row-reverse;
     align-items: flex-start;
+    @include pc{
+      @include w;
+      flex-direction: column;
+    };
+    // https://coliss.com/articles/build-websites/operation/css/about-css-container-queries.html
+
 
     figure{
       width: 50%;
       aspect-ratio: 1/1;
       background-color: $key02;
+      @include pc{
+        @include w;
+        aspect-ratio: 2/1;
+        margin-bottom: 10px;
+      };
 
       a{
         // aspect-ratio: 1/1;
@@ -356,6 +396,10 @@ p a,.p_link{
       box-sizing: border-box;
       padding-right: 20px;
       margin-bottom: 1em;
+      @include pc{
+        @include w;
+        padding-right: 0px;
+      };
       ul{
         list-style: none;
         li{
@@ -395,17 +439,30 @@ p a,.p_link{
     &:nth-child(n + 3){
       width: 33.33%;
       flex-direction: column;
+      @include pc{
+        @include w;
+        flex-direction: row;
+        justify-content: space-between;
+      };
 
       figure{
         aspect-ratio: 2/1;
         @include w;
         margin-bottom: 10px;
+        @include pc{
+          width: calc(50% - 10px);
+          margin-bottom: 0px;
+          @include bs;
+          aspect-ratio: 1/1;
 
+        };
       }
       .txtBox{
         padding-right: 0px;
         @include w;
-
+        @include pc{
+          width: 50%;
+        };
 
       }
     }
