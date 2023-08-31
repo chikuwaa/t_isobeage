@@ -16,16 +16,16 @@
   <link rel="stylesheet" href="./css/style.css">
 </head>
 <body class="">
-  <div class="fixd_area_wrap">
+  <div class="fixd_area_wrap" id="header_menu">
     <header class="">
       <div class="tit_wrap">
         <h1 class="siteTit"><a href="/">いそべあげ</a></h1>
         <div class="icon_pic"></div>
       </div>
-      <nav class="pc">
+      <nav class="pc header_nav">
         <ul>
           <li><a href="#">Top</a></li>
-          <li><a href="#">about</a></li>
+          <li><a href="#about">about</a></li>
           <li><a href="#">works</a></li>
           <li><a href="#">BuJo</a></li>
           <li><a href="#">News/diary</a></li>
@@ -40,6 +40,17 @@
       </div>
     </header>
     <div class="about_contents">
+      <nav class="sp header_nav">
+        <ul>
+          <li><a href="#">Top</a></li>
+          <li><a href="#about">about</a></li>
+          <li><a href="#">works</a></li>
+          <li><a href="#">BuJo</a></li>
+          <li><a href="#">News/diary</a></li>
+          <li><a href="#">ask</a></li>
+          <li><a href="#">archive</a></li>
+        </ul>
+      </nav>
       <h2 class="tit_h2">About</h2>
       <p class="txt_honbun"> 一次創作サークル「いそべあげ」による創作サイトです。<br> 画像・本文の自作発言・転載・加工・使用はお断りしております。<br> ご紹介いただける場合はURLの共有やリブログ等でいただけますと嬉しいです。<br> Repost is prohibited<br><br> サイトのソースコードについては<a href="https://github.com/chikuwaa/t_isobeage" target="_blank">こちら</a>で公開中。<br> html/CSS/JSはコピペOKです。 </p>
       <h3 class="tit_h3">サイトマップ</h3>
@@ -68,7 +79,7 @@
         </li>
       </ul>
       <h3 class="tit_h3">「いそべあげ」について</h3>
-      <p class="txt_honbun"> 「ひねくれてたっていいじゃないか」をテーマに創作活動している同人サークルです。<br><br> 作品中の全ての名称、キャラクター、場所などは全てフィクションです。<br> 実在する出来事や人物、文化を参考にすることもありすが、全て創作におけるデザインのためであり、参考元そのものを示す意図はありません。<br> ポジティブな感情を伝えられるよう努力しておりますが、ふさわしくない表現がございましたらよろしければメッセージなどでご指摘頂けますと嬉しいです。<br><br> 現在オンライン活動のみ。<br> 2023年はファンタジー漫画を描いています。<br><br> 以下サイトでは「いそべあげ」として活動登録・作品登録しています。 </p>
+      <p class="txt_honbun"> 「ひねくれてたっていいじゃないか」をテーマに創作活動している同人サークルです。<br><br> 作品中の全ての名称、キャラクター、場所などは全てフィクションです。<br> 実在する出来事や人物、文化を参考にすることもありすが、全て創作におけるデザインのためであり、参考元そのものを示す意図はありません。<br> ポジティブな感情を伝えられるよう努力しておりますが、ふさわしくない表現がございましたらよろしければメッセージなどでご指摘頂けますと嬉しいです。<br><br> 現在オンライン活動のみ。<br> 2023年はファンタジー漫画を描いています。<br><br> 以下サイトでは「いそべあげ」作品を登録しています。 </p>
       <ul class="about_ul mb1em">
         <li class="big">
           <a href="#" class="">Etsy</a>
@@ -260,6 +271,6 @@
       <small class="">&copy 2017-2023 isobeage, All Rights Reserved.</small>
     </footer>
   </div> <!-- /contents_wrap -->
-  <script src="./js/common.js"></script>
+  <script type="module" src="./js/menu.js"></script>
 </body>
 </html>

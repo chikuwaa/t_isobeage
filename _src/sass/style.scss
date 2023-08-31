@@ -28,6 +28,7 @@ header--------------------*/
   padding-right: 0px;
   box-sizing: border-box;
   transition: transform 1s ease-out;
+  z-index: 10;
   @include tab{
     transform: translateX(-100%) translateX(100px) ;
     padding: 15px;
@@ -92,51 +93,7 @@ header--------------------*/
       }
     }
     nav{
-      margin-left: auto;
 
-      ul{
-        margin-top: -30px;
-        @include tab{
-          margin-top: 0px;
-        };
-        li{
-          @include tc;
-          padding: 1em 0px;
-          font-size: calc(1em * 1.2);
-          position: relative;
-
-          &::before{
-            @include db;
-            content: "";
-            position: absolute;
-            top: 0px;
-            right: -5px;
-            height: 100%;
-            background-color: $key02;
-            width: 5px;
-            transform: scale(1,0);
-            transition: transform 500ms ease-out;
-            transform-origin: center bottom;
-
-          }
-          a{
-            letter-spacing: 0.05em;
-            display: block;
-            box-sizing: border-box;
-            padding-right: 30px;
-            transition: color 500ms ease-out;
-            font-weight: 600;
-          }
-
-          &:hover{
-            &::before{
-              transform: scale(1,1);
-              transform-origin: center top;
-
-            }
-          }
-        }
-      }
     }
     .sp_menu{
       @include dn;
@@ -156,16 +113,89 @@ header--------------------*/
       }
     }
   }
+  .header_nav{
+    margin-left: auto;
+
+
+    ul{
+      margin-top: -30px;
+      @include tab{
+        margin-top: 0px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5em 0px;
+      };
+      li{
+        @include tc;
+        padding: 1em 0px;
+        font-size: calc(1em * 1.2);
+        position: relative;
+        @include tab{
+          padding: 0px;
+          width: 50%;
+        };
+        @include sp{
+          width: 100%;
+        };
+
+        &::before{
+          @include db;
+          content: "";
+          position: absolute;
+          top: 0px;
+          right: -5px;
+          height: 100%;
+          background-color: $key02;
+          width: 5px;
+          transform: scale(1,0);
+          transition: transform 500ms ease-out;
+          transform-origin: center bottom;
+          @include tab{
+            @include dn;
+          };
+        }
+        a{
+          letter-spacing: 0.05em;
+          display: block;
+          box-sizing: border-box;
+          padding-right: 30px;
+          transition: color 500ms ease-out;
+          font-weight: 600;
+          @include tab{
+            padding: 0.5em;
+          };
+        }
+
+        &:hover{
+          &::before{
+            transform: scale(1,1);
+            transform-origin: center top;
+
+          }
+        }
+      }
+    }
+
+
+  }
   .about_contents{
     width: calc(100% - 350px);
+    max-width: 980px;
     box-sizing: border-box;
     overflow: auto;
     max-height: 100vh;
     -ms-overflow-style: none; // MS Edge
     scrollbar-width: none; // ff
     // background-color: #fff;
-    border-radius: 20px;
-    padding: 30px;
+    // border-radius: 20px;
+    // padding: 30px 0px;
+    @include ma;
+    @include tab{
+      width: calc(100% - 100px);
+    };
+    @include sp{
+      width: calc(100% - 75px);
+    };
 
     &::-webkit-scrollbar{
       @include dn; //chrome
@@ -187,9 +217,13 @@ header--------------------*/
     border-radius: 20px;
     border: solid 3px $key02;
     overflow: hidden;
+    @include sp{
+      border-width: 2px;
+    };
 
     dt{
-      width: 200px;
+      flex-basis: 200px;
+      flex-grow: 1;
       font-size: var(--font-size-h5);
       font-weight: 600;
       padding: 0.5em 1em;
@@ -202,7 +236,9 @@ header--------------------*/
       }
     }
     dd{
-      width: calc(100% - 200px);
+      flex-basis:  calc(100% - 200px);
+      min-width: 50%;
+      flex-grow: 1;
       border-bottom: solid 1px $key02;
       box-sizing: border-box;
       border-left: 1px solid $key02;
@@ -223,23 +259,34 @@ header--------------------*/
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    gap: 0.5em;
 
     li{
-      width: 32%;
+      // width: 32%;
       border: solid 3px $key02;
       border-radius: 20px;
-      margin-bottom: 0.5em;
+      // margin-bottom: 0.5em;
       overflow: hidden;
+      flex-basis: 32%;
+      min-width: 150px;
+      flex-grow: 1;
 
       &.big{
-        width: 100%;
+        // width: 100%;
         display: flex;
+        flex-wrap: wrap;
+        flex-basis: 100%;
 
         a{
-          width: 50%;
+          // width: 50%;
+          flex-basis: 50%;
+          flex-grow: 1;
         }
         p{
-          width: 50%;
+          // width: 50%;
+          flex-basis: 50%;
+          flex-grow: 1;
+          min-width: 200px;
 
         }
       }

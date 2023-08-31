@@ -2,21 +2,15 @@
     var root;
     var thisPage;
 %>
-<div class="fixd_area_wrap">
+<div class="fixd_area_wrap" id="header_menu">
   <header class="">
     <div class="tit_wrap">
       <h1 class="siteTit"><a href="/">いそべあげ</a></h1>
       <div class="icon_pic"></div>
     </div>
-    <nav class="pc">
+    <nav class="pc header_nav">
       <ul>
-        <li><a href="#">Top</a></li>
-        <li><a href="#">about</a></li>
-        <li><a href="#">works</a></li>
-        <li><a href="#">BuJo</a></li>
-        <li><a href="#">News/diary</a></li>
-        <li><a href="#">ask</a></li>
-        <li><a href="#">archive</a></li>
+        <%- include('./_menu_ul',{root,thisPage}) %>
       </ul>
     </nav>
     <div class="sp_menu">
@@ -26,6 +20,11 @@
     </div>
   </header>
   <div class="about_contents">
+    <nav class="sp header_nav">
+      <ul>
+        <%- include('./_menu_ul',{root,thisPage}) %>
+      </ul>
+    </nav>
     <h2 class="tit_h2">About</h2>
     <p class="txt_honbun">
       一次創作サークル「いそべあげ」による創作サイトです。<br>
@@ -82,7 +81,7 @@
       現在オンライン活動のみ。<br>
       2023年はファンタジー漫画を描いています。<br><br>
 
-      以下サイトでは「いそべあげ」として活動登録・作品登録しています。
+      以下サイトでは「いそべあげ」作品を登録しています。
     </p>
     <ul class="about_ul mb1em">
       <li class="big">

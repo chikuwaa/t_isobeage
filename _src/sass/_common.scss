@@ -39,7 +39,7 @@ a{
 }
 .sp{
 display: none !important;
-@include sp{
+@include tab{
   display: block !important;
 }
 }
